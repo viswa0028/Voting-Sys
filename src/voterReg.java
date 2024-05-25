@@ -23,9 +23,12 @@ public class voterReg extends Voter {
 
         numberVoter++;
         System.out.println(numberVoter);
-        Voter voter = new Voter(name, dateOfBirth, age, gender, nationality);
+        String username = generateUsername(name, dateOfBirth);
+        String password = generatePassword(8);
+        Voter voter = new Voter(name, dateOfBirth, age, gender, nationality, username, password);
         voter.ID = numberVoter;
         votersList.add(voter);
         return voter;
     }
+
 }
