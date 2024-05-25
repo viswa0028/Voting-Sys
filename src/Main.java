@@ -4,8 +4,5 @@ public class Main {
 ////        voterReg.registration();
 ////        voterReg.registration();
         System.out.println(voterReg.votersList.get(0));
-
-
     }
-
 }

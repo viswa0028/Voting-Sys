@@ -1,3 +1,5 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -39,6 +41,19 @@ public class voterReg extends Voter {
                                     //        CALLING THE RESPECTIVE METHODS FOR RESPECTIVE WORKING
 
         String username = generateUsername(name, dateOfBirth);
+
+                                    //        CODE FOR CHECKING IF THE VOTER EXISTS OR NOT
+
+        try {
+            File myObj = new File("/Users/karthikeya/My Folder/projects/VotingSys/" + username + ".txt");
+            Scanner myReader = new Scanner(myObj);
+            System.out.println("You have already registered");
+            myReader.close();
+            return registration();
+        } catch (FileNotFoundException e) {
+            System.out.println("You are getting registered");
+        } 
+
         String password = generatePassword(8);
         Voter voter = new Voter(name, dateOfBirth, age, gender, nationality, username, password);
         voter.ID = numberVoter;
