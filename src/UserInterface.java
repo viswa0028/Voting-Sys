@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class UserInterface extends JFrame {
     // Variables to store registration data
@@ -94,8 +95,21 @@ public class UserInterface extends JFrame {
             JOptionPane.showMessageDialog(this, "Registration details stored!");
             cardLayout.show(mainPanel, "Home");
             numberVoter++;
-            //System.out.println(numberVoter);
-            Voter voter = new Voter(name, dateOfBirth , gender, nationality);
+            //Generating username
+            String year = dateOfBirth.substring(4);
+            username= name + year;
+            //Generating password
+
+            String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            Random random = new Random();
+            StringBuilder pass = new StringBuilder();
+
+            for (int i = 0; i <5; i++) {
+                int index = random.nextInt(characters.length());
+                pass.append(characters.charAt(index));
+            }
+            password=pass.toString();
+            Voter voter = new Voter(name, dateOfBirth , gender, nationality,username,password);
             voter.ID = numberVoter;
             votersList.add(voter);
             System.out.println(voter);
