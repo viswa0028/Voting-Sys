@@ -11,6 +11,12 @@ public class Voter {
     protected String username;
     protected String password;
 
+                                        //    THESE ARE THE GETTER FOR THE FIELDS OF VOTER
+
+    public String getName() {
+        System.out.println(name);
+        return name;
+    }
     public String getDateOfBirth() {
         return dateOfBirth;
     }
@@ -27,7 +33,17 @@ public class Voter {
         return nationality;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
     protected static int numberVoter;
+
+                                            //    CONSTRUCTORS FOR VOTERS FOR VARIOUS USE
+
     public Voter() {
 
     }
@@ -48,11 +64,6 @@ public class Voter {
         this.nationality = nationality;
     }
 
-    public String getName() {
-        System.out.println(name);
-        return name;
-    }
-
     @Override
     public String toString() {
         return "Voter{" +
@@ -66,6 +77,8 @@ public class Voter {
                 ", password='" + password + '\'' +
                 '}';
     }
+
+                                        //    GENERATING THE PASSWORD AND USERNAME METHODS
 
     public static String generateUsername(String name, String dateOfBirth) {
         String year = dateOfBirth.substring(4);
