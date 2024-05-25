@@ -2,7 +2,6 @@ public class Voter {
     protected   int ID;
     private String name;
     private String dateOfBirth;
-    private int age;
     private String gender;
     private String nationality;
 
@@ -10,10 +9,9 @@ public class Voter {
     public Voter() {
 
     }
-    public Voter(String name, String dateOfBirth, int age, String gender, String nationality) {
+    public Voter(String name, String dateOfBirth, String gender, String nationality) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
-        this.age = age;
         this.gender = gender;
         this.nationality = nationality;
     }
@@ -29,7 +27,6 @@ public class Voter {
                 "ID=" + ID +
                 ", name='" + name + '\'' +
                 ", dateOfBirth='" + dateOfBirth + '\'' +
-                ", age=" + age +
                 ", gender='" + gender + '\'' +
                 ", nationality='" + nationality + '\'' +
                 '}';
